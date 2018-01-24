@@ -30,12 +30,21 @@ namespace Kill_Nickelback
             //Once the set is populated with 7 instances, iterate over the set of songs, and check if the band name is "Nickelback".
             foreach (var song in allSongs)
             {
-                Console.WriteLine($"{song}");
+                if (song.Artist != "Nickleback")
+                {
+                    //If the band is not Nickelback, then add it to the goodSongs list.
+                    goodSongs.Add(song);
+                }
+                
             }
 
-            //If the band is not Nickelback, then add it to the goodSongs list.
-
             //Use another foreach loop to print out all the good songs.
+            foreach (var goodSong in goodSongs)
+            {
+                Console.WriteLine($"{goodSong.Name} by {goodSong.Artist} is a good song...");
+            }
+            
+
             Console.ReadLine();
         }
     }
